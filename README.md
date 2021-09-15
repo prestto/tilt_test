@@ -22,12 +22,21 @@ Bonus:
 
 ## Install
 
+### pipenv
+
+```bash
+pip install --user pipenv
+```
+
 ### k3d
 
 - [Install Doc](https://k3d.io/v4.4.8/#install-script)
+- [DiskPressure issue](https://github.com/tilt-dev/tilt/issues/1076)
 
 ```bash
 curl -s https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash
+k3d cluster create tilt-test-cluster --k3s-server-arg '--kubelet-arg=eviction-hard=imagefs.available<1%,nodefs.available<1%' \
+    --k3s-server-arg '--kubelet-arg=eviction-minimum-reclaim=imagefs.available=1%,nodefs.available=1%'
 ```
 
 ### kubectl
@@ -49,6 +58,12 @@ sudo apt-get install -y kubectl
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/tilt-dev/tilt/master/scripts/install.sh | bash
+```
+
+### K9s (Optional, but practical)
+
+```bash
+curl -sS https://webinstall.dev/k9s | bash
 ```
 
 ## Run
