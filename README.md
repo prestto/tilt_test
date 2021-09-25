@@ -22,6 +22,10 @@ Bonus:
 
 ## Install
 
+```bash
+sudo apt update
+```
+
 ### pipenv
 
 ```bash
@@ -34,7 +38,10 @@ pip install --user pipenv
 - [DiskPressure issue](https://github.com/tilt-dev/tilt/issues/1076)
 
 ```bash
+# install
 curl -s https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash
+
+# launch cluster: tilt-test-cluster
 k3d cluster create tilt-test-cluster --k3s-server-arg '--kubelet-arg=eviction-hard=imagefs.available<1%,nodefs.available<1%' \
     --k3s-server-arg '--kubelet-arg=eviction-minimum-reclaim=imagefs.available=1%,nodefs.available=1%'
 ```
