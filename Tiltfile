@@ -16,4 +16,4 @@ docker_build('user632716/general:example-python-image', '.', dockerfile='./docke
 ])
 
 print('Setting up test scripts')
-test('unit_tests', 'pipenv run python manage.py test', deps=['./common/'])
+test('unit_tests', 'pipenv run python manage.py test', deps=['./common/', './test'])
