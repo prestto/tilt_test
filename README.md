@@ -4,11 +4,13 @@ This repo is a test to deploy a simple `django` app in `Tilt`.  If the test is s
 
 For the test to be succesful, tilt must be able to:
 
-- Quickly reflect local changes to a docker container (ie not have to relaunch the container manually).
+- [x] Quickly reflect local changes to a docker container (ie not have to relaunch the container manually).
 
-- Files created by running a script in the container must be available on host (mimicing django's makemigrations).
+- [x] Be able to run unit tests
 
-- We should be able to launch a script in the container from the host (for operations like seeding, reset DB etc).
+- [ ] Files created by running a script in the container must be available on host (mimicing django's makemigrations).
+
+- [ ] We should be able to launch a script in the container from the host (for operations like seeding, reset DB etc).
 
 Bonus:
 
