@@ -25,3 +25,12 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "500m"
+          env:
+            - name: POSTGRES_PASSWORD
+              value: pgpassword
+            - name: POSTGRES_HOST
+              value: postgres-external
+            - name: POSTGRES_PORT
+              value: "5432"
+            - name: POSTGRES_USER
+              value: postgres

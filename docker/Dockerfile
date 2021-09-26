@@ -7,4 +7,4 @@ RUN pip install -r requirements.txt
 ADD . .
 
 
-ENTRYPOINT ["python", "manage.py", "runserver"]
+ENTRYPOINT ["scripts/launch.sh"]

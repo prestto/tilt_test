@@ -31,7 +31,7 @@ sudo apt update
 ### pipenv
 
 ```bash
-pip install --user pipenv
+pip3 install --user pipenv
 ```
 
 ### k3d
