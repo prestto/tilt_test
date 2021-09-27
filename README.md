@@ -8,9 +8,9 @@ For the test to be succesful, tilt must be able to:
 
 - [x] Be able to run unit tests
 
-- [ ] Files created by running a script in the container must be available on host (mimicing django's makemigrations).
+- [x] We should be able to launch a script in the container from the host (for operations like seeding, reset DB etc).
 
-- [ ] We should be able to launch a script in the container from the host (for operations like seeding, reset DB etc).
+- [ ] Files created by running a script in the container must be available on host (mimicing django's makemigrations).
 
 Bonus:
 
