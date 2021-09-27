@@ -20,14 +20,14 @@ test('unit_tests', 'pipenv run python manage.py test', deps=['./common/', './tes
 print('Setting up makemigrations command')
 local_resource(
     'make_migrations',
-    cmd='pipenv run python manage.py makemigrations common',
-    deps=['./common/', './test'],
+    cmd='./scripts/run_manage_py.sh makemigrations common',
+    deps=['./common/', './test', './scripts'],
     trigger_mode=TRIGGER_MODE_MANUAL
 )
 
 local_resource(
     'migrate',
-    cmd='pipenv run python manage.py migrate common',
-    deps=['./common/'],
+    cmd='./scripts/run_manage_py.sh migrate',
+    deps=['./common/', './scripts'],
     trigger_mode=TRIGGER_MODE_MANUAL
 )

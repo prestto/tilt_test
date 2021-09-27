@@ -1,16 +1,15 @@
 #!/bin/bash
 
+python manage.py showmigrations
+
 # make migrations
 echo "making migrations"
-python manage.py makemigrations
+python manage.py makemigrations common
 
 # migrate the db
 echo "Migrating..."
-python manage.py migrate --fake
-
-# migrate the db
-echo "Migrating..."
-python manage.py migrate
+python manage.py migrate common
+python manage.py showmigrations
 
 # seed the db
 echo "Seeding..."
