@@ -15,19 +15,25 @@ docker_build('user632716/general:example-python-image', '.', dockerfile='./docke
 ])
 
 print('Setting up test scripts')
-test('unit_tests', 'pipenv run python manage.py test', deps=['./common/', './test'])
-
-print('Setting up makemigrations command')
 local_resource(
-    'make_migrations',
-    cmd='./scripts/run_manage_py.sh makemigrations common',
+    'unit_tests',
+    cmd='./run.sh unit',
     deps=['./common/', './test', './scripts'],
     trigger_mode=TRIGGER_MODE_MANUAL
 )
 
+print('Setting up makemigrations command')
+local_resource(
+    'make_migrations',
+    cmd='./run.sh makemigrations',
+    deps=['./common/', './test', './scripts'],
+    trigger_mode=TRIGGER_MODE_MANUAL
+)
+
+print('Setting up migrate command')
 local_resource(
     'migrate',
-    cmd='./scripts/run_manage_py.sh migrate',
+    cmd='./run.sh migrate',
     deps=['./common/', './scripts'],
     trigger_mode=TRIGGER_MODE_MANUAL
 )
