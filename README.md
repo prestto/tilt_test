@@ -10,7 +10,10 @@ For the test to be succesful, tilt must be able to:
 
 - [x] We should be able to launch a script in the container from the host (for operations like seeding, reset DB etc).
 
-- [ ] Files created by running a script in the container must be available on host (mimicing django's makemigrations).
+- [-] Files created by running a script in the container must be available on host (mimicing django's makemigrations).
+  - this doesn't seem possible, but we could just run this locally, no need to do it in the container really.
+
+- [ ] Have a DB with a state independant of the application, ie hot reload app, manual reload/ reset db.
 
 Bonus:
 
